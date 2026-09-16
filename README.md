@@ -1,12 +1,13 @@
 # Hack2ignite
 project: ClearSpend
 ClearSpend 💸✨
-> A clean, low-friction bi-weekly budget tracker designed for students. Built for Hack2Ignite.
+> A clean bi-weekly budget tracker designed just for students. 
 
-## ╰┈➤ The Pitch
+## ╰┈➤ ・❥・ The Pitch
 Most budget apps are built for corporate salaries, not student allowances. 
-ClearSpend is a streamlined, bi-weekly expense tracker that removes the friction of logging every single rupee. 
-With a "categorize-later" philosophy and dynamic spending nudges, it helps students keep their wallets safe without the spreadsheet stress.
+ClearSpend is a fast, bi-weekly expense tracker that takes the headache out of managing your money.
+With an "add and sort later" approach and friendly reminders to stop you from overspending, 
+it helps students protect their wallets without the stress of messy spreadsheets.
 
 ## ╰┈➤ Features
 * **Secure Student Auth:** Full login and signup system with securely hashed passwords.
@@ -20,7 +21,7 @@ With a "categorize-later" philosophy and dynamic spending nudges, it helps stude
 * **Database:** SQLite3
 * **Security:** bcrypt, express-session
 
-## ╰┈➤ How to Run Locally
+## ╰┈➤ ・❥・How to Run Locally
 To test out the live server on your own machine:
 1. Open your terminal and navigate to the `clearspend` folder.
 2. Run `npm install` to install all required dependencies.
