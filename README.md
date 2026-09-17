@@ -1,31 +1,32 @@
-# Hack2ignite
-project: ClearSpend
-ClearSpend 💸✨
-> A clean bi-weekly budget tracker designed just for students. 
+# ClearSpend
 
-## ╰┈➤ ・❥・ The Pitch
-Most budget apps are built for corporate salaries, not student allowances. 
-ClearSpend is a fast, bi-weekly expense tracker that takes the headache out of managing your money.
-With an "add and sort later" approach and friendly reminders to stop you from overspending, 
-it helps students protect their wallets without the stress of messy spreadsheets.
+ClearSpend is a lightweight, multi-user bi-weekly expense tracking web application designed for students and young professionals. 
+It replaces traditional monthly budgeting models with a 14-day cycle and provides real-time spending insights.
 
-## ╰┈➤ Features
-* **Secure Student Auth:** Full login and signup system with securely hashed passwords.
-* **Frictionless Quick-Add:** Add expenses in seconds; categorize them when you have time.
-* **Smart Dashboard:** Visual data tracking to monitor your bi-weekly allowance.
-* **Dynamic Nudges:** Context-aware alerts that playfully tell you when to step away from the online shopping cart.
+---
 
-## ╰┈➤ Tech Stack
-* **Frontend:** Vanilla HTML5, CSS3, JavaScript (Fetch API)
-* **Backend:** Node.js, Express.js
-* **Database:** SQLite3
-* **Security:** bcrypt, express-session
+## Key Features
 
-## ╰┈➤ ・❥・How to Run Locally
-To test out the live server on your own machine:
-1. Open your terminal and navigate to the `clearspend` folder.
-2. Run `npm install` to install all required dependencies.
-3. Run `node server.js` to boot the backend and database.
-4. Open a web browser and navigate to `http://localhost:3001`.
-5. Create a new user account and start tracking!
+* **Bi-Weekly Budgeting**: Tailored 14-day financial tracking cycles.
+* **AI Spending Nudges**: Real-time category tracking that flags high-spending categories.
+* **Multi-User Isolation**: Secure registration, login, and data separation using a local JSON database.
+* **Visual Analytics**: Interactive doughnut charts powered by Chart.js mapping real-time category breakdowns.
+* **Cycle Simulation**: A mock bi-weekly reset feature to instantly clear current cycles and demonstrate functionality during live presentations.
+
+---
+
+## Tech Stack
+
+* **Backend**: Node.js, Express (`sev.js`)
+* **Database**: Local JSON persistence (`database.json`)
+* **Frontend**: HTML5, Vanilla JavaScript (`app.js`), CSS Flexbox/Grid
+* **Visualizations**: Chart.js
+
+---
+
+## Development & Collaboration Note
+
+Due to technical hardware constraints and device availability issues during development, both team members worked collaboratively on a single device, taking turns to write code, design the UI, and test system functionality. 
+
+The application was engineered using a hybrid workflow: core application architecture, multi-user isolation logic, and bug fixes were managed independently, while an AI block integration assistant was utilized for syntax optimization and rapid block-level drafting.
 
