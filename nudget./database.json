@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "username": "eggegamer",
+      "password": "12345",
+      "customBudget": 1000
+    },
+    {
+      "username": "testrun1",
+      "password": "12345",
+      "customBudget": 3000
+    },
+    {
+      "username": "testrun2",
+      "password": "12345",
+      "customBudget": 4000
+    },
+    {
+      "username": "testrun3",
+      "password": "12345",
+      "customBudget": 5000
+    }
+  ],
+  "expenses": [
+    {
+      "username": "eggegamer",
+      "amount": 50,
+      "category": "Food",
+      "note": "shwarma"
+    },
+    {
+      "username": "eggegamer",
+      "amount": 20,
+      "category": "Transport",
+      "note": "rick"
+    },
+    {
+      "username": "eggegamer",
+      "amount": 100,
+      "category": "Food",
+      "note": ""
+    },
+    {
+      "username": "eggegamer",
+      "amount": 6000,
+      "category": "Shopping",
+      "note": "spurgle"
+    },
+    {
+      "username": "eggegamer",
+      "amount": 7000,
+      "category": "Bills",
+      "note": "mobile"
+    }
+  ]
+}
