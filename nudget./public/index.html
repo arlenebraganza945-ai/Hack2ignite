@@ -1,75 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nudget</title>
-       <link rel="stylesheet" href="style.css">
+    <title>ClearSpend</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
+        /* --- TWO-COLUMN DASHBOARD LAYOUT --- */
+        .dashboard-layout {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+     .sidebar {
+            width: 250px; /* Locks the sidebar to a fixed size on the far left */
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 12px 15px; /* Back to the clean, standard 1x size */
+            font-size: 14px; /* Standard text size */
+            background: #0984e3;
+            color: white;
+            border: none;
+            border-radius: 8px; /* Smoothed out corners */
+            cursor: pointer;
+            font-weight: bold;
+            line-height: 1.4;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Kept the nice drop shadow */
+            transition: transform 0.2s; /* Kept the smooth click effect */
+        }
+        
+        .sidebar button:active {
+            transform: scale(0.96);
+        }
+
+        .sidebar button.placeholder {
+            background: #636e72; 
+        }
+
+        .sidebar button.placeholder {
+            background: #636e72; 
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-    <!-- LOGIN SCREEN -->
-    <div id="auth-section">
-        <h1>Nudget</h1>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button id="login-btn">Login</button>
-        <button id="signup-btn">Sign Up</button>
-        <p id="auth-message" style="color: red;"></p>
-    </div>
-
-    <!-- DASHBOARD -->
-    <!-- DASHBOARD -->
-     <!-- Live Checkout Simulator -->
-
-<div id="dashboard-section" style="display: none;">
-    <h2>Welcome back!</h2>
-    <button type="button" id="open-mock-btn" style="background:#ff7675;">⚡ Test Live Checkout</button>
-
-<!-- Payment Modal (Hidden by default) -->
-<div id="payment-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center;">
-    <div style="background:white; padding:24px; border-radius:12px; width:300px; text-align:center;">
-        <p style="color:#888; margin:0;">Mock Bank Gateway</p>
-        <h3 style="margin:8px 0;">Paying ₹240 to Cafe</h3>
+        <!-- LOGIN SCREEN -->
+        <div id="auth-section">
+            <h1>Nudget</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Sign Up</button>
+            <p id="auth-message" style="color: red;"></p>
+        </div>
         
-        <p style="font-size:13px; margin-bottom:8px;">Categorize before payment:</p>
-        <select id="mock-category">
-            <option value="Food">Food & Snacks</option>
-            <option value="Transport">Transport</option>
-            <option value="Entertainment">Fun / Outings</option>
-        </select>
-        
-        <button id="confirm-pay-btn" style="background:#00b894; margin-top:12px;">Authorize & Pay ₹240</button>
-        <button id="cancel-pay-btn" style="background:#d63031;">Cancel</button>
-    </div>
-    
-    <hr>
+        <!-- DASHBOARD -->
+        <div id="dashboard-section" style="display: none;">
+            
+            <div class="dashboard-layout">
+                
+                <!-- LEFT SIDEBAR -->
+                <div class="sidebar">
+                    <button type="button" id="toggle-expenses-btn">📂 View Recent Expenses</button>
+                    
+                    <!-- Placeholder for Pie Chart -->
+                    <!-- NEW: Pie Chart Container -->
+                <div id="chart-container" class="box" style="display: none; padding: 15px;">
+                    <h3 style="margin-top: 0; font-size: 14px; text-align: center;">Spending Breakdown</h3>
+                    <canvas id="expenseChart"></canvas>
+                </div>
 
-    <h3>Quick Add Expense</h3>
-    <form id="expense-form">
-        <input type="number" id="amount" placeholder="Amount (e.g. 150)" required>
-        <select id="category">
-            <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
-            <option value="Bills">Bills</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Uncategorized">Note/Uncategorized</option>
-        </select>
-        <input type="text" id="note" placeholder="What was it for? (Optional)">
-        
-        <button type="submit">Add Expense</button>
-    </form>
-    <p id="expense-message" style="color: green; font-weight: bold;"></p>
-    <hr>
-        <h3>Your Recent Expenses</h3>
-        <ul id="expense-list">
-            <!-- Expenses will magically appear here -->
-        </ul>
-</div>
-<div class="container"></div>
+                    <!-- Insight Checker (Category Breakdown) -->
+                    <div id="insight-checker" class="box" style="display: none; border-left: 5px solid #00bcd4;">
+                        <strong>Category Breakdown:</strong>
+                        <ul id="category-breakdown" style="list-style-type: none; padding: 0; margin: 10px 0 0 0;">
+                            <!-- Dynamically injected category totals will appear here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- RIGHT MAIN CONTENT -->
+                <div class="main-content">
+                    
+                    <!-- AI Nudge Banner -->
+                    <div id="ai-nudge-banner" class="box" style="display: none; background: #ffeaa7; border-left: 5px solid #fdcb6e; color: #2d3436;">
+                         <strong>Info:</strong> <span id="nudge-text"></span>
+                    </div>
+
+                    <!-- Welcome Box -->
+                    <div class="box">
+                        <h2 style="margin: 0;">Welcome back!</h2>
+                    </div>
+
+                    <!-- Add Expense Box -->
+                    <div class="box">
+                        <h3 style="margin-top: 0;">Quick Add Expense</h3>
+                        <form id="expense-form">
+                            <input type="number" id="amount" placeholder="Amount (e.g. 150)" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+                            <select id="category" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+                                <option value="Food">Food</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Bills">Bills</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Uncategorized">Note/Uncategorized</option>
+                            </select>
+                            <input type="text" id="note" placeholder="What was it for? (Optional)" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+                            
+                            <button type="submit" style="width: 100%; padding: 10px; background: #2d3436; color: white; border: none; border-radius: 5px; cursor: pointer;">Add Expense</button>
+                        </form>
+                        <p id="expense-message" style="color: green; font-weight: bold; margin-bottom: 0;"></p>
+                    </div>
+
+                    <!-- Hidden Expenses Container -->
+                    <div id="expenses-container" class="box" style="display: none;">
+                        <h3 style="margin-top: 0;">Your Recent Expenses</h3>
+                        <ul id="expense-list" style="list-style-type: none; padding: 0; margin: 0;">
+                        <!-- Expenses will magically appear here -->
+                    </ul>
+                    </div>
+
+                </div> <!-- End of Right Main Content -->
+            </div> <!-- End of Dashboard Layout -->
+        </div> <!-- END OF DASHBOARD SECTION -->
+    </div> <!-- END OF MAIN APP CONTAINER -->
+    <!-- Add this line right above your app.js script! -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
     <script src="app.js"></script>
 </body>
 </html>

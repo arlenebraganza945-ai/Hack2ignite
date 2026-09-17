@@ -8,35 +8,3 @@ body {
     padding: 20px;
 }
 
-/* --- The Main App Card --- */
-.container {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px; /* Keeps it looking like a mobile app */
-}
-
-/* --- Inputs and Buttons --- */
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0 15px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box; /* Keeps padding from breaking width */
-}
-
-button {
-    background-color: #2b2b2b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-button:hover {
-    background-color: #000000;
-}
