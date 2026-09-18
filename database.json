@@ -1,0 +1,145 @@
+{
+  "users": [
+    {
+      "username": "eggegamer",
+      "password": "12345",
+      "customBudget": 1000
+    },
+    {
+      "username": "testrun1",
+      "password": "12345",
+      "customBudget": 3000
+    },
+    {
+      "username": "testrun2",
+      "password": "12345",
+      "customBudget": 4000
+    },
+    {
+      "username": "testrun3",
+      "password": "12345",
+      "customBudget": 5000
+    },
+    {
+      "username": "testrun4",
+      "password": "12345",
+      "customBudget": 3000
+    }
+  ],
+  "expenses": [
+    {
+      "username": "eggegamer",
+      "amount": 50,
+      "category": "Food",
+      "note": "shwarma"
+    },
+    {
+      "username": "eggegamer",
+      "amount": 20,
+      "category": "Transport",
+      "note": "rick"
+    },
+    {
+      "username": "eggegamer",
+      "amount": 100,
+      "category": "Food",
+      "note": ""
+    },
+    {
+      "username": "eggegamer",
+      "amount": 6000,
+      "category": "Shopping",
+      "note": "spurgle"
+    },
+    {
+      "username": "eggegamer",
+      "amount": 7000,
+      "category": "Bills",
+      "note": "mobile"
+    },
+    {
+      "username": "testrun1",
+      "amount": 50,
+      "category": "Food",
+      "note": "noodles"
+    },
+    {
+      "username": "testrun1",
+      "amount": 35,
+      "category": "Food",
+      "note": "cofee"
+    },
+    {
+      "username": "testrun1",
+      "amount": 20,
+      "category": "Transport",
+      "note": "rickshaw"
+    },
+    {
+      "username": "testrun1",
+      "amount": 10,
+      "category": "Transport",
+      "note": "rickshaw"
+    },
+    {
+      "username": "testrun1",
+      "amount": 20,
+      "category": "Transport",
+      "note": "bus"
+    },
+    {
+      "username": "testrun1",
+      "amount": 40,
+      "category": "Transport",
+      "note": "bus"
+    },
+    {
+      "username": "testrun1",
+      "amount": 200,
+      "category": "Entertainment",
+      "note": "bowling"
+    },
+    {
+      "username": "testrun1",
+      "amount": 600,
+      "category": "Bills",
+      "note": "recharge"
+    },
+    {
+      "username": "testrun1",
+      "amount": 400,
+      "category": "Shopping",
+      "note": "clothes"
+    },
+    {
+      "username": "testrun1",
+      "amount": 100,
+      "category": "Food",
+      "note": "lunch"
+    },
+    {
+      "username": "testrun1",
+      "amount": 20,
+      "category": "Transport",
+      "note": "bus"
+    },
+    {
+      "username": "testrun1",
+      "amount": 500,
+      "category": "Entertainment",
+      "note": "mall"
+    },
+    {
+      "username": "testrun1",
+      "amount": 60,
+      "category": "Transport",
+      "note": "bus"
+    },
+    {
+      "username": "testrun1",
+      "amount": 700,
+      "category": "Entertainment",
+      "note": "game"
+    }
+  ]
+}

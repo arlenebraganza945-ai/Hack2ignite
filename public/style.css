@@ -1,0 +1,10 @@
+/* --- Global Page Style --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; /* Soft grey background */
+    color: #333;
+    display: flex; /* This magically centers everything */
+    justify-content: center;
+    padding: 20px;
+}
+
